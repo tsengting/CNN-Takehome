@@ -1,5 +1,6 @@
 create type varchararray as varchar(255) array[varchar(255)];
 
+
 create type objtyp as object
 (
    c1    integer,
