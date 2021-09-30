@@ -1,5 +1,11 @@
 create type varchararray as varchar(255) array[varchar(255)];
 
+create type objtyp as object
+(
+   c1    integer,
+   c2    varchar(255)
+);
+
 create table Content_Metadata (Content_Id varchar(255), Content_Type varchar(255), Creation_Date datetime, Version integer, Body varchararray, 
                                Author varchar(255), Related_Media varchararray);
 
@@ -11,6 +17,6 @@ create table Ad_Service_Interaction_Data (Ads_User_Id varchar(255), Ad_Id varcha
 
 create table OAuth_Id_Service (OAuth_Id varchar(255), Ads_User_Id varchar(255), OAuth_Provider integer, Timestamp datetime);
 
-create table Registered_Users (User_Id varchar(255), OAuth_Id varchar(255), Display_Name integer, Preferences object, Status varchar(255), Register_Date date,
+create table Registered_Users (User_Id varchar(255), OAuth_Id varchar(255), Display_Name integer, Preferences objtyp, Status varchar(255), Register_Date date,
                               Last_Access_time datetime);
 
