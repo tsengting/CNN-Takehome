@@ -28,14 +28,14 @@ ORDER BY Register_Date, Last_Access_Time;
 SELECT P.Ads_Users_Id, P.Content_Id, P.Timestamp, C.Content_Type, C.Creation_Date, C.Related_Media
 FROM Page_Impression P LEFT JOIN Content_Metadata C ON P.Content_Id = C.Content_Id
 GROUP BY P.Ads_Users_Id
-ORDER BY P.Timestamp 
+ORDER BY P.Timestamp; 
 
 /* Generate dashboards to represent registered vs non-registered users */
 /* Registered Users */
 SELECT A.Ads_User_Id
 FROM Ad_Service_Interaction_Data A LEFT JOIN OAuth_Id_Service O ON A.Ads_User_Id = O.Ads_User_Id LEFT JOIN Registered_Users R ON O.OAuth_Id = R.OAuth_Id
-WHERE R.Register_Date IS NOT NULL
+WHERE R.Register_Date IS NOT NULL;
 /* Non-Registered Users */
 SELECT A.Ads_User_Id
 FROM Ad_Service_Interaction_Data A LEFT JOIN OAuth_Id_Service O ON A.Ads_User_Id = O.Ads_User_Id LEFT JOIN Registered_Users R ON O.OAuth_Id = R.OAuth_Id
-WHERE R.Register_Date IS NULL
+WHERE R.Register_Date IS NULL;
