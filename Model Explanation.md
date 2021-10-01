@@ -5,4 +5,4 @@ and it has one-to-many relationship to the other two tables.
 
 Table Ad_Service_Interaction_Data has one-to-many relationship to table OAuth_Id_Service, with column Ads_User_Id as common attributes.
 
-Table OAuth_Id_Service has one-to-one relationship to table Registered Users, with column OAuth_Id as common attributes.
+Table OAuth_Id_Service has one-to-one relationship to table Registered_Users, with column OAuth_Id as common attributes.
